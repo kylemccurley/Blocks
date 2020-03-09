@@ -52,7 +52,7 @@ class TodoList
       index += 1
     end
 
-    todos
+    self
   end
   
   def to_s
@@ -120,7 +120,7 @@ class TodoList
   def select
     index = 0
     output = TodoList.new('Selected List')
-    self.each { |todo| output << todo if yield todo }
+    each { |todo| output << todo if yield todo }
     output
   end
   
