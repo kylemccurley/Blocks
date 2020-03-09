@@ -118,11 +118,7 @@ class TodoList
   def select
     index = 0
     output = []
-    while index < todos.size
-      element = todos.fetch(index)
-      output << element if yield element
-      index += 1
-    end
+    self.each { |todo| output << todo if yield todo }
     output
   end
   
