@@ -99,6 +99,8 @@ class TodoList
     end
   end
   
+  alias_method :<<, :add
+  
   def remove_at(pos)
     todos.delete(pos - 1)
   end
@@ -117,7 +119,7 @@ class TodoList
   
   def select
     index = 0
-    output = []
+    output = TodoList.new('Selected List')
     self.each { |todo| output << todo if yield todo }
     output
   end
