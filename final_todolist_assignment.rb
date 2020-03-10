@@ -118,7 +118,6 @@ class TodoList
   end
   
   def select
-    index = 0
     output = TodoList.new('Selected List')
     each { |todo| output << todo if yield todo }
     output
@@ -155,10 +154,6 @@ class TodoList
   attr_accessor :todos
 end
 
-=begin
-find_by_title:   takes a string as argument, and returns the first Todo object that matches the argument. Return nil if no todo is found.
-=end
-
 todo1 = Todo.new("Buy milk")
 todo2 = Todo.new("Clean room")
 todo3 = Todo.new("Go to gym")
@@ -178,4 +173,3 @@ list.mark_all_done
 list.each { |todo| puts todo }
 list.mark_all_undone
 list.each { |todo| puts todo }
-
